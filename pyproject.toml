@@ -1,0 +1,18 @@
+[project]
+name = "traveler-voice-companion"
+version = "0.1.0"
+description = "使用火山引擎实时语音模型与复刻音色的本地陪伴对话应用"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.116.0",
+  "uvicorn[standard]>=0.35.0",
+  "volcengine-audio>=0.2.4",
+  "websockets>=15.0.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.4.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+

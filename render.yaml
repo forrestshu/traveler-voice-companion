@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: traveler-voice-backend-fengyuan
+    runtime: python
+    plan: free
+    buildCommand: pip install .
+    startCommand: uvicorn backend.app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.13
+      - key: VOLCENGINE_APP_ID
+        sync: false
+      - key: VOLCENGINE_ACCESS_TOKEN
+        sync: false
+      - key: VOLCENGINE_SPEAKER_ID
+        sync: false
+      - key: VOLCENGINE_REALTIME_SPEAKER_ID
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://traveler-voice-companion-fengyuan.netlify.app
