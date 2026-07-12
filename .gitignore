@@ -5,6 +5,7 @@ __pycache__/
 *.m4a
 *.wav
 *.tsbuildinfo
+*.egg-info/
 /*.mp4
 /*.png
 frontend/node_modules/
